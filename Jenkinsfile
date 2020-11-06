@@ -43,12 +43,7 @@ pipeline {
             }
         }
     }
-    post {
-        failure {
-            mail to: 'daniel.rios.ch.int@gmail.com', subject: 'Build failed', body: 'Please fix!'
-        }
-    }
-}
+
 
 def gradlew(String... args) {
     sh "./gradlew ${args.join(' ')} -s"

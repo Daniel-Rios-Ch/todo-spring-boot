@@ -39,8 +39,13 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: '**/*.jar.*', onlyIfSuccessful: true
+        }
+    }
 }
-archiveArtifacts 'jar'
+
 
 def gradlew(String... args) {
     sh "./gradlew ${args.join(' ')} -s"

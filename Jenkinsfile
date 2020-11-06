@@ -40,7 +40,7 @@ pipeline {
         }
     }
 }
-
+archiveArtifacts 'jar'
 
 def gradlew(String... args) {
     sh "./gradlew ${args.join(' ')} -s"

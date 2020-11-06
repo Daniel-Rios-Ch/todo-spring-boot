@@ -43,6 +43,7 @@ pipeline {
             }
         }
     }
+}
 
 
 def gradlew(String... args) {

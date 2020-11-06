@@ -39,6 +39,11 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: '**/*.war.*', onlyIfSuccessful: true
+        }
+    }
     
 }
 

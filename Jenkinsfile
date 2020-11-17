@@ -1,8 +1,6 @@
 pipeline {
     agent any
-
- 
-
+    
     stages {
         stage('Compile') {
             steps {
@@ -43,10 +41,8 @@ pipeline {
         always {
             archiveArtifacts artifacts: '**/*.war.*', onlyIfSuccessful: true
         }
-    }
-    
+    }    
 }
-
 
 def gradlew(String... args) {
     sh "./gradlew ${args.join(' ')} -s"
